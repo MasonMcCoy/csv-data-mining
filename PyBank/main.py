@@ -12,8 +12,8 @@ import csv
 #calculates the number of months in the dataset
 with open('C:/Users/Mason/Data_Bootcamp/Python_Challenge/PyBank/Resources/03-Python_HW_Instructions_PyBank_Resources_budget_data.csv', 'r') as csvfile:    
     csvreader = csv.reader(csvfile, delimiter=',')
+    next(csvreader)
     total_months = sum(1 for row in csvreader)
-    total_months = total_months - 1
     print(total_months)
     
 #calculates the sum of all charges
@@ -29,6 +29,23 @@ with open('C:/Users/Mason/Data_Bootcamp/Python_Challenge/PyBank/Resources/03-Pyt
                 
 #calculates average change of all charges
 #average_change = net_charges/row_count
+
+#finds the greatest increase in profits
+with open('C:/Users/Mason/Data_Bootcamp/Python_Challenge/PyBank/Resources/03-Python_HW_Instructions_PyBank_Resources_budget_data.csv', 'r') as csvfile:    
+    csvreader = csv.reader(csvfile, delimiter=',')      
+    next(csvreader)
+    greatest_increase = max(int(column[1].replace(',', '')) for column in csvreader)
+    print(greatest_increase)
+    #if row == greatest_increase:
+        #greatest_month = int(row in column[1])
+        #print(greatest_month)
+        
+#finds the greatest decrease in losses
+with open('C:/Users/Mason/Data_Bootcamp/Python_Challenge/PyBank/Resources/03-Python_HW_Instructions_PyBank_Resources_budget_data.csv', 'r') as csvfile:    
+    csvreader = csv.reader(csvfile, delimiter=',')      
+    next(csvreader)
+    greatest_loss = min(int(column[1].replace(',', '')) for column in csvreader)
+    print(greatest_loss)
 
 #prints analytic info to terminal
 print:('Financial Analysis')
