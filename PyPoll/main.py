@@ -34,17 +34,17 @@ with open('C:/Users/Mason/Data_Bootcamp/Python_Challenge/PyPoll/Resources/03-Pyt
     #print:(-------------------------)
 
     #prints analytic info to terminal
-    print:('Election Results')
-    print:('-------------------------')
-    print:('Total Votes: ')
-    print:('-------------------------')
-    print:('Khan: ')
-    print:('Correy: ')
-    print:('Li: ')
-    print:("O'Tooley: ")
-    print:('-------------------------')
-    print:('Winner: ')
-    print:('-------------------------')
+print:('Election Results')
+print:('-------------------------')
+print:('Total Votes: ')
+print:('-------------------------')
+print:('Khan: ')
+print:('Correy: ')
+print:('Li: ')
+print:("O'Tooley: ")
+print:('-------------------------')
+print:('Winner: ')
+print:('-------------------------')
 
 #Generates .txt file "poll_results" with voting info
 txt = open('poll_results.txt', 'wb')
