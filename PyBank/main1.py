@@ -29,21 +29,25 @@ average_change = average_charge/total_months
 
 #finds the greatest increase and greatest loss in profits
 with open('C:/Users/Mason/Data_Bootcamp/Python_Challenge/PyBank/Resources/03-Python_HW_Instructions_PyBank_Resources_budget_data.csv', 'r') as csvfile:    
-    csvreader = csv.reader(csvfile, delimiter=',')      
+    csvreader = csv.reader(csvfile, delimiter=',')
     next(csvreader)
-    greatest_decrease = 0
-    greatest_increase = 0
-    decrease_date = 0
-    increase_date = 0
-    for idx, column in enumerate(csvreader):
-        profit = column[1]
-        if greatest_decrease > int(profit):
-            decrease_date = column[0]
-            greatest_decrease = int(profit)
-            
-        if greatest_increase < int(profit):
-            increase_date = column[0]
-            greatest_increase = int(profit)
+    reader = list(csvreader)
+    decrease_date = ''
+    increase_date = ''
+    local_max = 0
+    global_max = 0
+    local_min = 0
+    global_min = 0
+    previous = reader[0]
+    print(reader)
+    for idx, row in enumerate(reader):
+        local_max = max(local_max, int(row[1]) - int(previous[1]))
+        global_max = max(global_max, local_max)
+        local_min = min(local_min, int(row[1]) - int(previous[1]))
+        global_min = min(global_min, local_min)
+        previous = row
+    print(global_max, global_min)
+    print(decrease_date, increase_date)
 
 #prints analytic info to terminal
 print('Financial Analysis')
