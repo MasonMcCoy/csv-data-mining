@@ -8,6 +8,7 @@ Created on Sun Sep 27 19:11:38 2020
 'Script for PyPoll Python Challenge'
 
 import csv
+import os.path
 candidates = []
 khan_voters = []
 correy_voters = []
@@ -68,7 +69,7 @@ print('Winner: ', vote_winner)
 print('-------------------------')
 
 #Generates .txt file "poll_results" with voting info
-txt = open('poll_results.txt', 'w')
+txt = open(os.path.join('Analysis', 'poll_results.txt'), 'w')
 txt.write('Election Results\n')
 txt.write('----------------------------\n')
 txt.write('Total Votes: ' + str(total_votes) + "\n")
