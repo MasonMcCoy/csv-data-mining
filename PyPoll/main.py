@@ -9,6 +9,7 @@ Created on Sun Sep 27 19:11:38 2020
 
 import csv
 import os.path
+
 candidates = []
 khan_voters = []
 correy_voters = []
@@ -55,7 +56,7 @@ with open('C:/Users/Mason/Data_Bootcamp/Python_Challenge/PyPoll/Resources/03-Pyt
     else:
         vote_winner = "O'Tooley"
    
-    #prints analytic info to terminal
+#prints analytic info to terminal
 print('Election Results')
 print('-------------------------')
 print('Total Votes: ', total_votes)
